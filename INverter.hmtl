@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>INverter</title></head>
+<body>
+
+	Texto: <input type="text" size=70 name="texto">
+	<button onclick="FunctionInverte()">Inverter</button>
+	<button onclick="LimpaTela()">Limpar Tela</button>
+	
+	<p>Texto Invertido:</p>
+
+	<label id="inverso"></label>
+
+	<script>
+		function FunctionInverte() {
+			var palavra = document.getElementsByName("texto");
+
+            		valor = palavra.item(0).value.toString().split("");
+			/* O método split() converte uma String em um Array. O valor entre 	
+
+			parênteses determina a separação, que pode ser por vírgula, espaço, 	
+
+			pipe, etc*/
+
+            		invertido = valor.reverse().join("");
+			/* O método reverse() inverte a ordem do elementos de um Array */
+
+           		document.getElementById("inverso").innerHTML = invertido;
+		}
+		
+		function LimpaTela() {
+			document.getElementByName("texto").value = "";
+			document.getElementById("inverso").value = "";
+			document.getElementByName("texto").focus();
+		}
+	</script>
+
+</body>
+</html>
